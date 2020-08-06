@@ -1,4 +1,6 @@
 const express = require("express");
+
+//Object Destructuring and obtaining the controller functions here from bootcamps methods
 const {
   getBootcamps,
   getBootcamp,
@@ -10,7 +12,6 @@ const {
 const router = express.Router();
 
 //Associating controller methods with the appropriate routes
-
 router.route("/").get(getBootcamps).post(createBootcamp);
 
 router

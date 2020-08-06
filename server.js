@@ -13,6 +13,7 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
