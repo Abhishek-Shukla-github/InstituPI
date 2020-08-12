@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const BootcampSchema = new mongoose.Schema({
   name: {
@@ -94,6 +95,16 @@ const BootcampSchema = new mongoose.Schema({
       default: Date.now,
     },
   },
+});
+
+//Mongoose Middleware
+//Create bootcamp slug from the Bootcamp name
+//WE DO NOT USE ARROW FUNCTIONS IN THIS BECAUSE ARROW HANDLES this DIFFERENTLY
+BootcampSchema.pre("save", function (next) {
+  //Pre middleware functions are executed one after another, when each middleware calls next.
+  this.slug = slugify(this.name, { lower: true }); //this points to the query object here its BootcampSchema
+  console.log("Inside the slug");
+  next();
 });
 
 module.exports = mongoose.model("Bootcamp", BootcampSchema);

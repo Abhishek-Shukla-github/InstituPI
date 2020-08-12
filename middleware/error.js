@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
   //Mongoose Bad ObjectID
   if (err.name === "CastError") {
     const message = `Resource not found with an ID of ${err.value}`;
-    error = new errorResponse(message, 404);
+    error = new errorResponse(message, 404); //error variable will now be an object and errorResponse assigns message and statusCode to it
   }
 
   //Duplicate data entry
