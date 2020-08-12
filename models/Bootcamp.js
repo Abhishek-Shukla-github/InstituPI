@@ -103,7 +103,6 @@ const BootcampSchema = new mongoose.Schema({
 BootcampSchema.pre("save", function (next) {
   //Pre middleware functions are executed one after another, when each middleware calls next.
   this.slug = slugify(this.name, { lower: true }); //this points to the query object here its BootcampSchema
-  console.log("Inside the slug");
   next();
 });
 
