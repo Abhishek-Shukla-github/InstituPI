@@ -1,3 +1,4 @@
+const errorResponse=require('../utils/errorResponse');
 const Bootcamp = require("../models/Bootcamp");
 
 //Controller methods are middleware functions which are used to connect to a specific HTTP route and perform the desired operation as mentioned in the function itself
@@ -22,14 +23,14 @@ exports.getBootcamp = async (req, res, next) => {
     const bootcamp = await Bootcamp.findById(req.params.id);
     if (!bootcamp) {
       //return keyword is used to avoid headers already set error
-      return res.status(400).json({ success: false });
+      return next(new errorResponse(`No Bootcamp found with an id ${req.params.id}`,404));
     }
     res.status(200).json({
       success: true,
       data: bootcamp,
     });
   } catch (error) {
-    res.status(400).json({ success: false });
+    next(error);
   }
 };
 
@@ -44,7 +45,7 @@ exports.createBootcamp = async (req, res, next) => {
       data: bootcamp,
     });
   } catch (error) {
-    res.status(400).json({ success: false });
+    next(error);
   }
 };
 
@@ -59,11 +60,11 @@ exports.updateBootcamp = async (req, res, next) => {
     });
 
     if (!bootcamp) {
-      return res.status(400).json({ success: false });
+      return next(new errorResponse(`No Bootcamp found with an id ${req.params.id}`,404))
     }
     res.status(400).json({ success: true, data: bootcamp });
   } catch (error) {
-    res.status(400).json({ success: false });
+    next(error);
   }
 };
 
@@ -74,10 +75,10 @@ exports.deleteBootcamp = async (req, res, next) => {
   try {
     const bootcamp = await Bootcamp.findByIdAndDelete(req.params.id);
     if (!bootcamp) {
-      return res.status(400).json({ success: false });
+     return next(new errorResponse(`No Bootcamp found with an id ${req.params.id}`,404))
     }
     res.status(200).json({ success: true, data: bootcamp });
   } catch (error) {
-    res.status(200).json({ success: false });
+    next(error);
   }
 };
