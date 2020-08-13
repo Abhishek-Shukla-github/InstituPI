@@ -22,12 +22,13 @@ const PORT = process.env.PORT || 5000;
 app.use("/api/v1/bootcamps", bootcamps);
 
 //Middleware is always placed after mounting the routes
-app.use(errorHandler);//Using errorHandler here makes it available globally for all routes
+app.use(errorHandler); //Using errorHandler here makes it available globally for all routes
 
 const server = app.listen(
   PORT,
   console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT} with secret ${process.env.SECRET}`
+      .yellow.bold
   )
 );
 
