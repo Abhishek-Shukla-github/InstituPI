@@ -1,5 +1,6 @@
 const errorResponse = require("../utils/errorResponse");
 const Bootcamp = require("../models/Bootcamp");
+const geocoder = require('../utils/geocoder');
 const asyncHandler = require("../middleware/async");
 //Controller methods are middleware functions which are used to connect to a specific HTTP route and perform the desired operation as mentioned in the function itself
 
@@ -7,11 +8,18 @@ const asyncHandler = require("../middleware/async");
 //@route          GET /api/v1/bootcamps
 //@access         Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-  const bootcamp = await Bootcamp.find();
-  res.status(200).json({
+  let query;
+
+  let queryStr = JSON.stringify(req.query);
+
+  queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+
+  query = Bootcamp.find(JSON.parse(queryStr));
+
+  const bootcamps = await query; res.status(200).json({
     success: true,
-    count: bootcamp.length,
-    data: bootcamp,
+    count: bootcamps.length,
+    data: bootcamps,
   });
 });
 
