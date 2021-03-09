@@ -3,6 +3,7 @@ let dotenv = require("dotenv");
 let colors = require("colors");
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
+const courses = require('./routes/courses');
 
 //Routes File
 let bootcamps = require("./routes/bootcamps");
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 5000;
 
 //Mount Routers
 app.use("/api/v1/bootcamps", bootcamps);
+app.use('/api/v1/courses', courses);
 
 //Middleware is always placed after mounting the routes
 app.use(errorHandler); //Using errorHandler here makes it available globally for all routes
