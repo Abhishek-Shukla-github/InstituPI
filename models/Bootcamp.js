@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
 const geocoder = require("../utils/geocoder");
+let colors = require("colors");
 
 const BootcampSchema = new mongoose.Schema({
   name: {
@@ -100,7 +101,11 @@ const BootcampSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-});
+},
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+  });
 
 //Mongoose Middleware
 //Create bootcamp slug from the Bootcamp name
@@ -128,5 +133,21 @@ BootcampSchema.pre("save", async function (next) {
   this.address = undefined;
   next();
 });
+
+// Cascade delete courses when a bootcamp is deleted
+BootcampSchema.pre('remove', async function (next) {
+  console.log(`Courses being removed from bootcamp ${this._id}`.red);
+  await this.model('Course').deleteMany({ bootcamp: this._id });
+  next();
+});
+
+// Reverse populate with virtuals
+BootcampSchema.virtual('courses', {
+  ref: 'Course',
+  localField: '_id',
+  foreignField: 'bootcamp',
+  justOne: false
+});
+
 
 module.exports = mongoose.model("Bootcamp", BootcampSchema);
