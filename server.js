@@ -9,7 +9,7 @@ const fileupload = require('express-fileupload');
 
 //Routes File
 let bootcamps = require("./routes/bootcamps");
-
+const auth = require('./routes/auth');
 //Load the env vars
 dotenv.config({ path: "./config/config.env" });
 
@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Mount Routers
 app.use("/api/v1/bootcamps", bootcamps);
 app.use('/api/v1/courses', courses);
+app.use('/api/v1/auth', auth);
 
 //Middleware is always placed after mounting the routes
 app.use(errorHandler); //Using errorHandler here makes it available globally for all routes
