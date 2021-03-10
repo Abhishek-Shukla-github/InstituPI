@@ -14,17 +14,18 @@ const {
 } = require("../controllers/bootcamps");
 
 const router = express.Router();
+const { protect } = require('../middleware/auth');
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
 router.route('/radius/:zipcode/:distance').get(getBootcampsInRadius);
-router.route('/:id/photo').put(bootcampPhotoUpload);
+router.route('/:id/photo').put(protect, bootcampPhotoUpload);
 //Associating controller methods with the appropriate routes
-router.route("/").get(getBootcamps).post(createBootcamp);
+router.route("/").get(getBootcamps).post(protect, createBootcamp);
 
 router
   .route("/:id")
   .get(getBootcamp)
   .put(updateBootcamp)
-  .delete(deleteBootcamp);
+  .delete(protect, deleteBootcamp);
 
 module.exports = router;
