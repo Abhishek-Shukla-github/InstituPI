@@ -137,7 +137,7 @@ exports.updateBootcamp = asyncHandler(async (req, res, next) => {
   // Make sure user is bootcamp owner
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
-      new ErrorResponse(
+      new errorResponse(
         `User ${req.params.id} is not authorized to update this bootcamp`,
         401
       )
@@ -160,8 +160,6 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
       new errorResponse(`No Bootcamp found with an id ${req.params.id}`, 404)
     );
   }
-  bootcamp.remove();
-  res.status(200).json({ success: true, data: bootcamp });
   // Make sure user is bootcamp owner
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
@@ -171,6 +169,8 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
       )
     );
   }
+  bootcamp.remove();
+  res.status(200).json({ success: true, data: bootcamp });
 });
 // @desc      Get bootcamps within a radius
 // @route     GET /api/v1/bootcamps/radius/:zipcode/:distance
@@ -208,25 +208,34 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
 
   if (!bootcamp) {
     return next(
-      new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
+      new errorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
+    );
+  }
+  // Make sure user is bootcamp owner
+  if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
+    return next(
+      new errorResponse(
+        `User ${req.params.id} is not authorized to update this bootcamp`,
+        401
+      )
     );
   }
 
   if (!req.files) {
-    return next(new ErrorResponse(`Please upload a file`, 400));
+    return next(new errorResponse(`Please upload a file`, 400));
   }
 
   const file = req.files.file;
 
   // Make sure the image is a photo
   if (!file.mimetype.startsWith('image')) {
-    return next(new ErrorResponse(`Please upload an image file`, 400));
+    return next(new errorResponse(`Please upload an image file`, 400));
   }
 
   // Check filesize
   if (file.size > process.env.MAX_FILE_UPLOAD) {
     return next(
-      new ErrorResponse(
+      new errorResponse(
         `Please upload an image less than ${process.env.MAX_FILE_UPLOAD}`,
         400
       )
@@ -239,7 +248,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
     if (err) {
       console.error(err);
-      return next(new ErrorResponse(`Problem with file upload`, 500));
+      return next(new errorResponse(`Problem with file upload`, 500));
     }
 
     await Bootcamp.findByIdAndUpdate(req.params.id, { photo: file.name });
