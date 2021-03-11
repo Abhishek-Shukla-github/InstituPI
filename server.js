@@ -7,6 +7,7 @@ const errorHandler = require("./middleware/error");
 const courses = require('./routes/courses');
 const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
+const reviews = require('./routes/reviews');
 
 //Routes File
 let bootcamps = require("./routes/bootcamps");
@@ -31,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api/v1/bootcamps", bootcamps);
 app.use('/api/v1/courses', courses);
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/reviews', reviews);
+
 //Middleware is always placed after mounting the routes
 app.use(errorHandler); //Using errorHandler here makes it available globally for all routes
 //Cookie Parser
