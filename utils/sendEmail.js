@@ -20,7 +20,6 @@ const sendEmail = async options => {
     };
 
     const info = await transport.sendMail(message);
-
     console.log(`Message sent successfully as ${info.messageId}`);
 };
 
