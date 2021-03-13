@@ -12,7 +12,7 @@ const {
   deleteBootcamp,
   getBootcampsInRadius,
   bootcampPhotoUpload
-} = require("../controllers/bootcamps");
+} = require("../controllers/institutions");
 
 const router = express.Router();
 const { protect, authorize } = require('../middleware/auth');

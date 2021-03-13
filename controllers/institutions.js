@@ -1,6 +1,6 @@
 const path = require('path');
 const errorResponse = require("../utils/errorResponse");
-const Bootcamp = require("../models/Bootcamp");
+const Bootcamp = require("../models/Institute");
 const geocoder = require('../utils/geocoder');
 const asyncHandler = require("../middleware/async");
 //Controller methods are middleware functions which are used to connect to a specific HTTP route and perform the desired operation as mentioned in the function itself
