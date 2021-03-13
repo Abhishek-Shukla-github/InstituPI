@@ -88,7 +88,7 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
   if (!bootcamp) {
     //return keyword is used to avoid headers already set error
     return next(
-      new errorResponse(`No Bootcamp found with an id ${req.params.id}`, 404)
+      new errorResponse(`No Educational Institute found with an id ${req.params.id}`, 404)
     );
   }
   res.status(200).json({
@@ -111,7 +111,7 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
   if (publishedBootcamp && req.user.role !== 'admin') {
     return next(
       new errorResponse(
-        `The user with ID ${req.user.id} has already published a bootcamp`,
+        `The user with ID ${req.user.id} has already published an Institute`,
         400
       )
     );
@@ -131,14 +131,14 @@ exports.updateBootcamp = asyncHandler(async (req, res, next) => {
 
   if (!bootcamp) {
     return next(
-      new errorResponse(`No Bootcamp found with an id ${req.params.id}`, 404)
+      new errorResponse(`No Educational Institute found with an id ${req.params.id}`, 404)
     );
   }
   // Make sure user is bootcamp owner
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
       new errorResponse(
-        `User ${req.params.id} is not authorized to update this bootcamp`,
+        `User ${req.params.id} is not authorized to update this Institute`,
         401
       )
     );
@@ -157,14 +157,14 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
   const bootcamp = await Bootcamp.findById(req.params.id);
   if (!bootcamp) {
     return next(
-      new errorResponse(`No Bootcamp found with an id ${req.params.id}`, 404)
+      new errorResponse(`No Educational Institute found with an id ${req.params.id}`, 404)
     );
   }
   // Make sure user is bootcamp owner
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
       new errorResponse(
-        `User ${req.params.id} is not authorized to delete this bootcamp`,
+        `User ${req.params.id} is not authorized to delete this Institute`,
         401
       )
     );
@@ -208,14 +208,14 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
 
   if (!bootcamp) {
     return next(
-      new errorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
+      new errorResponse(`Institute not found with id of ${req.params.id}`, 404)
     );
   }
   // Make sure user is bootcamp owner
   if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
     return next(
       new errorResponse(
-        `User ${req.params.id} is not authorized to update this bootcamp`,
+        `User ${req.params.id} is not authorized to update this Institute`,
         401
       )
     );

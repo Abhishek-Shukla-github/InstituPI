@@ -61,7 +61,7 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
 
     if (!bootcamp) {
         return next(
-            new ErrorResponse(`No bootcamp with the id of ${req.params.bootcampId}`),
+            new ErrorResponse(`No Institute with the id of ${req.params.bootcampId}`),
             404
         );
     }
@@ -70,7 +70,7 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
     if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
         return next(
             new ErrorResponse(
-                `User ${req.user.id} is not authorized to add a course to bootcamp ${bootcamp._id}`,
+                `User ${req.user.id} is not authorized to add a course to Institute ${bootcamp._id}`,
                 401
             )
         );
