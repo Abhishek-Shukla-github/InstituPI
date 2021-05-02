@@ -4,7 +4,9 @@
 <meta http-equiv=x-ua-compatible content="ie=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>InstituPI :- An API of Educational institutes
-    &nbsp;|&nbsp;</title>
+    &nbsp;|&nbsp;
+    A Representational State Transfer (RESTful) convention based Node Application Programming Interface
+    (API), to incorporate all of educational training institutes' directory worldwide.</title>
 <style media=screen>
     /*!* Bootstrap v3.3.7 (http://getbootstrap.com)
 * Copyright 2011-2016 Twitter, Inc.
@@ -8395,14 +8397,13 @@
         font-weight: 700
     }
 </style>
-
 <div class=container-fluid>
     <div class=row>
         <div class="col-md-12 collection-intro">
             <h3>InstituPI :- An API of Educational institutes</h3>
             <p>
-            <p>A full-fledged Backend Node API designed for developers consisting information of all Educational
-                institute.</p>
+            <p>A Representational State Transfer (RESTful) convention based Node Application Programming Interface
+                (API), to incorporate all of educational training institutes' directory worldwide. </p>
         </div>
         <div class=col-md-12>
             <div class=col-md-3>
@@ -8414,7 +8415,6 @@
                                     User via Token</a>
                             <li><a class=endpoint_menu href=#jump-Authentication-LoginUser>Login User</a>
                             <li><a class=endpoint_menu href=#jump-Authentication-LogoutUser>Logout User</a>
-                            <li><a class=endpoint_menu href=#jump-Authentication-NewRequest>New Request</a>
                             <li><a class=endpoint_menu href=#jump-Authentication-RegisterUser>Register User</a>
                             <li><a class=endpoint_menu href=#jump-Authentication-ResetPassword>Reset Password</a>
                             <li><a class=endpoint_menu href=#jump-Authentication-UpdateDetails>Update Details</a>
@@ -8462,7 +8462,7 @@
                 <div class="panel panel-default">
                     <div class=panel-heading>
                         <h3 class=panel-title id=Authentication>Authentication
-                            <span class=badge>9</span>
+                            <span class=badge>8</span>
                         </h3>
                     </div>
                     <div class=panel-body>
@@ -8478,7 +8478,7 @@
                                                     Password</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/forgotpassword
+                                                {{URL}}/api/v1/auth/forgotpassword
                                             </h4>
                                         </a>
                                     </div>
@@ -8488,7 +8488,7 @@
                                                 <p>Forgot Password Email
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;email&#34;:&#34;john@gmail.com&#34;
+                                                &#34;email&#34;:&#34;abhishekshuklajs@gmail.com&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8503,7 +8503,7 @@
                                                     via Token</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/me
+                                                {{URL}}/api/v1/auth/me
                                             </h4>
                                         </a>
                                     </div>
@@ -8527,11 +8527,6 @@
                                                         <td>
                                                             <p>JSON Type
                                             </table>
-                                            <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;email&#34;:&#34;abhi@male2.com&#34;,
-                                                &#34;password&#34;:&#34;123456789&#34;
-                                                }</span>
-                                            <div class=clearfix></div>
                                         </div>
                                     </div>
                                 </div>
@@ -8544,7 +8539,7 @@
                                                 &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/login
+                                                {{URL}}/api/v1/auth/login
                                             </h4>
                                         </a>
                                     </div>
@@ -8568,8 +8563,8 @@
                                                             <p>JSON Type
                                             </table>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;email&#34;:&#34;abhi@gmail.com&#34;,
-                                                &#34;password&#34;:&#34;123456789&#34;
+                                                &#34;email&#34;:&#34;abhishekshuklajs@gmail.com&#34;,
+                                                &#34;password&#34;:&#34;12345678910&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8584,7 +8579,7 @@
                                                 &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/logout
+                                                {{URL}}/api/v1/auth/logout
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Authentication-LogoutUser class="panel-collapse collapse">
@@ -8592,28 +8587,6 @@
                                             <h5 class="label label-default">Description</h5><br><small>
                                                 <p>Add Logout Route and delete the Token!
                                             </small><br><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-warning" id=jump-Authentication-NewRequest>
-                                    <div class=panel-heading><small class="pull-right text-muted">raw</small>
-                                        <a class=text-warning data-toggle=collapse data-parent=#accordion-Authentication
-                                            href=#collapse-Authentication-NewRequest>
-                                            <h4 class=panel-title><span
-                                                    class="glyphicon glyphicon-plus"></span><strong>New Request</strong>
-                                                &nbsp;|&nbsp;
-                                                <strong class="request-method border-warning">PUT</strong>
-                                                &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/updatedetails
-                                            </h4>
-                                        </a>
-                                    </div>
-                                    <div id=collapse-Authentication-NewRequest class="panel-collapse collapse">
-                                        <div class=panel-body>
-                                            <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;name&#34;:&#34;John F Kennedy&#34;
-                                                }</span>
-                                            <div class=clearfix></div>
                                         </div>
                                     </div>
                                 </div>
@@ -8626,7 +8599,7 @@
                                                     User</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/register
+                                                {{URL}}/api/v1/auth/register
                                             </h4>
                                         </a>
                                     </div>
@@ -8650,8 +8623,8 @@
                                                             <p>JSON Type
                                             </table>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;name&#34;:&#34;Publisher&#34;,
-                                                &#34;email&#34;:&#34;publisher@gmail.com&#34;,
+                                                &#34;name&#34;:&#34;Abhishek Publisher&#34;,
+                                                &#34;email&#34;:&#34;abhishekshuklajs@gmail.com&#34;,
                                                 &#34;password&#34;:&#34;123456789&#34;,
                                                 &#34;role&#34;:&#34;publisher&#34;
                                                 }</span>
@@ -8668,7 +8641,7 @@
                                                     Password</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/resetpassword/2f9bad81eb5c5f2b2a5a870c6d7f3bec85aff4e8
+                                                {{URL}}/api/v1/auth/resetpassword/6c03ab5023f2b93f4ecc0b15fc4b910654095cd2
                                             </h4>
                                         </a>
                                     </div>
@@ -8678,7 +8651,7 @@
                                                 <p>Reset Password
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;password&#34;:&#34;123456&#34;
+                                                &#34;password&#34;:&#34;12345678910&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8693,7 +8666,7 @@
                                                     Details</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/updatedetails
+                                                {{URL}}/api/v1/auth/updatedetails
                                             </h4>
                                         </a>
                                     </div>
@@ -8703,8 +8676,8 @@
                                                 <p>Update User Details while being logged in
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;name&#34;:&#34;John F Kennedy&#34;,
-                                                &#34;email&#34;:&#34;john@gmail.com&#34;
+                                                &#34;name&#34;:&#34;Rishabh Yadav&#34;,
+                                                &#34;email&#34;:&#34;abhishekshuklaJS@gmail.com&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8719,7 +8692,7 @@
                                                     Password</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/auth/updatepassword
+                                                {{URL}}/api/v1/auth/updatepassword
                                             </h4>
                                         </a>
                                     </div>
@@ -8759,7 +8732,7 @@
                                                     course</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725a1b7b292f5f8ceff788/courses
+                                                {{URL}}/api/v1/institutions/608d1175e3c1830015125e74/courses
                                             </h4>
                                         </a>
                                     </div>
@@ -8783,13 +8756,11 @@
                                                             <p>JSON Type
                                             </table>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;title&#34;: &#34;NoSQL Development&#34;,
+                                                &#34;title&#34;: &#34;Computer Engineering&#34;,
                                                 &#34;description&#34;: &#34;This course will provide you with all of the
-                                                essentials to become a successful frontend web developer. You will learn
-                                                to master HTML, CSS and front end JavaScript, along with tools like Git,
-                                                VSCode and front end frameworks like Vue&#34;,
-                                                &#34;weeks&#34;: 8,
-                                                &#34;tuition&#34;: 19500,
+                                                essentials to become a successful Computer Engineer&#34;,
+                                                &#34;weeks&#34;: 209,
+                                                &#34;tuition&#34;: 85000,
                                                 &#34;minimumSkill&#34;: &#34;beginner&#34;,
                                                 &#34;scholarhipsAvailable&#34;: true
                                                 }</span>
@@ -8806,7 +8777,7 @@
                                                     Course</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-danger">DELETE</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/courses/604796bd703fcb19000a614e
+                                                {{URL}}/api/v1/courses/608e6414d8c556001587b13d
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Courses-DeletingaCourse class="panel-collapse collapse">
@@ -8826,7 +8797,7 @@
                                                     Course</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/courses/5d725a4a7b292f5f8ceff789
+                                                {{URL}}/api/v1/courses/608e6414d8c556001587b13d
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Courses-GetaSingleCourse class="panel-collapse collapse">
@@ -8846,7 +8817,7 @@
                                                     Courses</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/courses
+                                                {{URL}}/api/v1/courses
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Courses-GetallCourses class="panel-collapse collapse">
@@ -8866,7 +8837,7 @@
                                                     an Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725a1b7b292f5f8ceff788/courses
+                                                {{URL}}/api/v1/institutions/608d1175e3c1830015125e74/courses
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Courses-GetallcoursesofanInstitute class="panel-collapse collapse">
@@ -8886,7 +8857,7 @@
                                                     Course</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/courses/5d725cd2c4ded7bcb480eaa2
+                                                {{URL}}/api/v1/courses/608e6414d8c556001587b13d
                                             </h4>
                                         </a>
                                     </div>
@@ -8910,8 +8881,13 @@
                                                             <p>JSON Type
                                             </table>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;title&#34; : &#34;Figma and AdobeXD&#34;,
-                                                &#34;weeks&#34; : &#34;100&#34;
+                                                &#34;title&#34;: &#34;Computer Engineering&#34;,
+                                                &#34;description&#34;: &#34;This course will provide you with all of the
+                                                essentials to become a successful Computer Engineer&#34;,
+                                                &#34;weeks&#34;: 209,
+                                                &#34;tuition&#34;: 85000,
+                                                &#34;minimumSkill&#34;: &#34;beginner&#34;,
+                                                &#34;scholarhipsAvailable&#34;: true
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8941,7 +8917,7 @@
                                                     Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/6048021d2a24093c4054642e/photo
+                                                {{URL}}/api/v1/institutions/608d1175e3c1830015125e74/photo
                                             </h4>
                                         </a>
                                     </div>
@@ -8963,6 +8939,7 @@
                                                         <td>file
                                                         <td>
                                                         <td>
+                                                            <p>Thakur college of Science and commerece
                                             </table>
                                         </div>
                                     </div>
@@ -8976,7 +8953,7 @@
                                                     Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/
+                                                {{URL}}/api/v1/institutions/
                                             </h4>
                                         </a>
                                     </div>
@@ -9000,18 +8977,21 @@
                                                             <p>JSON Type
                                             </table>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;name&#34;: &#34;NaMoooo Bootcamp&#34;,
-                                                &#34;description&#34;: &#34;ModernTech has one goal, and that is to make
-                                                you a rockstar developer and/or designer with a six figure salary. We
-                                                teach both development and UI/UX&#34;,
-                                                &#34;website&#34;: &#34;https://moderntech.com&#34;,
-                                                &#34;phone&#34;: &#34;(222) 222-2222&#34;,
-                                                &#34;email&#34;: &#34;enroll@moderntech.com&#34;,
-                                                &#34;address&#34;: &#34;220 Pawtucket St, Lowell, MA 01854&#34;,
+                                                &#34;name&#34;: &#34;Thakur College of Engineering&#34;,
+                                                &#34;description&#34;: &#34;Create. Enhance. and Sustain in the realm of
+                                                engineering at our institute!&#34;,
+                                                &#34;website&#34;: &#34;https://www.tcet.in&#34;,
+                                                &#34;phone&#34;: &#34;(022) 123-4567&#34;,
+                                                &#34;email&#34;: &#34;enroll@tcet.com&#34;,
+                                                &#34;address&#34;: &#34;A-Block, Thakur Educational Campus, Shyamnarayan
+                                                Thakur Marg, Thakur Village, Kandivali East, Mumbai, Maharashtra
+                                                400101&#34;,
                                                 &#34;careers&#34;: [
-                                                &#34;Web Development&#34;,
-                                                &#34;UI/UX&#34;,
-                                                &#34;Mobile Development&#34;
+                                                &#34;Computer science&#34;,
+                                                &#34;Electrical Engineering&#34;,
+                                                &#34;Civil Engineering&#34;,
+                                                &#34;Mechanical Engineering&#34;,
+                                                &#34;Information technology&#34;
                                                 ],
                                                 &#34;housing&#34;: false,
                                                 &#34;jobAssistance&#34;: true,
@@ -9031,7 +9011,7 @@
                                                     institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-danger">DELETE</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725cfec4ded7bcb480eaa7
+                                                {{URL}}/api/v1/institutions/608d1b182e82940015c108e5
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Institutions-Deleteaninstitute class="panel-collapse collapse">
@@ -9051,7 +9031,7 @@
                                                     institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725a1b7b292f5f8ceff788
+                                                {{URL}}/api/v1/institutions/608d1b182e82940015c108e5
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Institutions-Getasingleinstitute class="panel-collapse collapse">
@@ -9071,7 +9051,7 @@
                                                     Institutions</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/
+                                                {{URL}}/api/v1/institutions/
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Institutions-GetallInstitutions class="panel-collapse collapse">
@@ -9092,7 +9072,7 @@
                                                     a Radius</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/radius/110002/1000
+                                                {{URL}}/api/v1/institutions/radius/401104/1000
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Institutions-GetanInstituteinaRadius
@@ -9109,7 +9089,7 @@
                                                     Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/604cd9738baf1e0ae060960f
+                                                {{URL}}/api/v1/institutions/608d1b182e82940015c108e5
                                             </h4>
                                         </a>
                                     </div>
@@ -9119,7 +9099,7 @@
                                                 <p>Update a bootcamp
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;name&#34;:&#34;RaGa Footcamp&#34;
+                                                &#34;name&#34;:&#34;THakur College of Science&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -9148,7 +9128,7 @@
                                                     Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-success">POST</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725a1b7b292f5f8ceff788/reviews
+                                                {{URL}}/api/v1/institutions/608d1175e3c1830015125e74/reviews
                                             </h4>
                                         </a>
                                     </div>
@@ -9158,8 +9138,8 @@
                                                 <p>Let a User Add Review to a Bootcamp
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;title&#34;:&#34;Review by John&#34;,
-                                                &#34;text&#34;:&#34;Review by John&#34;,
+                                                &#34;title&#34;:&#34;Review by Abhi&#34;,
+                                                &#34;text&#34;:&#34;Review by Abhi&#34;,
                                                 &#34;rating&#34;:6
                                                 }</span>
                                             <div class=clearfix></div>
@@ -9175,7 +9155,7 @@
                                                     an Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-danger">DELETE</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/reviews/604aadbb44e5a61b8cd01641
+                                                {{URL}}/api/v1/reviews/608ee7c221afbf0015500be4
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Reviews-DeleteaReviewforanInstitute
@@ -9196,7 +9176,7 @@
                                                     an Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-info">GET</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/institutions/5d725a1b7b292f5f8ceff788/reviews
+                                                {{URL}}/api/v1/institutions/608d1175e3c1830015125e74/reviews
                                             </h4>
                                         </a></div>
                                     <div id=collapse-Reviews-GetallReviewsofanInstitute class="panel-collapse collapse">
@@ -9216,7 +9196,7 @@
                                                     an Institute</strong> &nbsp;|&nbsp;
                                                 <strong class="request-method border-warning">PUT</strong>
                                                 &nbsp;
-                                                institupi.herokuapp.com//api/v1/reviews/604aacf044e5a61b8cd0163c
+                                                {{URL}}/api/v1/reviews/608ee7c221afbf0015500be4
                                             </h4>
                                         </a>
                                     </div>
@@ -9226,9 +9206,9 @@
                                                 <p>Update a Review of a Bootcamp
                                             </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;title&#34;:&#34;It Sucks&#34;,
-                                                &#34;text&#34;:&#34;YUEEEKS&#34;,
-                                                &#34;rating&#34;:1
+                                                &#34;title&#34;:&#34;Updated Review to test the functionality&#34;,
+                                                &#34;text&#34;:&#34;Lorem Ipsum dolor sir emet.&#34;,
+                                                &#34;rating&#34;:5
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -9247,8 +9227,8 @@
         <div class=container-fluid>
             <div class="span12 text-center"><span data-toggle=tooltip
                     title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Made
-                    with <em class=love-color>&#9829;</em> by <a href=https://github.com/thedevsaddam target=_blank
-                        class=text-muted>thedevsaddam</a> | Generated at: 2021-04-27 22:33:35 by <a
+                    with <em class=love-color>&#9829;</em> by <a href=https://github.com/Abhishek-shukla-github
+                        target=_blank class=text-muted>Abhishek Shukla</a> | Generated at: 2021-05-02 23:41:57 by <a
                         href=https://github.com/thedevsaddam/docgen target=_blank class=text-muted>docgen</a></span>
             </div>
         </div>
