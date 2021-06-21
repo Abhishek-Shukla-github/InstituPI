@@ -4,4 +4,4 @@ InstituPI :- An API of Educational institutes
 
 This is the major project for my Final Year Engineering Graduation.
 
-Live Site:- https://institupi.herokuapp.com/
+Live Site :- https://institupi.herokuapp.com/
